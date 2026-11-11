@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Dashboard Utenti - XHR</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1>Dashboard Utenti</h1>
+      <p class="subtitle">Applicazione web AJAX interattiva basata su <code>XMLHttpRequest</code></p>
+    </header>
+
+    <main>
+      <section class="controls-section">
+        <div class="search-bar">
+          <input 
+            type="text" 
+            id="searchInput" 
+            placeholder="Cerca per nome utente (es. Leanne)..." 
+            autocomplete="off"
+          >
+          <button id="btnSearch" class="btn btn-primary">Cerca</button>
+          <button id="btnReset" class="btn btn-secondary">Mostra Tutti</button>
+        </div>
+      </section>
+
+      <section class="feedback-section">
+        <div id="spinner" class="spinner hidden" aria-hidden="true"></div>
+        <div id="statusMessage" class="status-message hidden" role="alert"></div>
+      </section>
+
+      <section class="results-section">
+        <ul id="userGrid" class="user-grid"></ul>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>Progetto AJAX per Esercitazione Scolastica — Integrato con JSONPlaceholder API</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
