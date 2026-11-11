@@ -1,18 +1,16 @@
 :root {
-  --primary: #2563eb;
-  --primary-hover: #1d4ed8;
-  --secondary: #64748b;
-  --secondary-hover: #475569;
-  --bg-main: #f8fafc;
+  --primary: #0284c7;
+  --primary-hover: #0369a1;
+  --bg-main: #f0f9ff;
   --bg-card: #ffffff;
-  --text-main: #0f172a;
-  --text-muted: #475569;
-  --border-color: #e2e8f0;
+  --text-main: #0c4a6e;
+  --text-muted: #38bdf8;
+  --border-color: #e0f2fe;
   --error-bg: #fef2f2;
   --error-text: #991b1b;
   --error-border: #fecaca;
-  --radius: 10px;
-  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --radius: 12px;
+  --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -24,13 +22,13 @@
 
 body {
   background-color: var(--bg-main);
-  color: var(--text-main);
+  color: #1e293b;
   min-height: 100vh;
   padding: 2rem 1rem;
 }
 
 .app-container {
-  max-width: 900px;
+  max-width: 650px;
   margin: 0 auto;
   background-color: var(--bg-card);
   padding: 2.5rem;
@@ -46,32 +44,27 @@ body {
 }
 
 .app-header h1 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: var(--primary);
   margin-bottom: 0.5rem;
 }
 
 .subtitle {
-  color: var(--text-muted);
+  color: #64748b;
   font-size: 0.95rem;
-}
-
-.controls-section {
-  margin-bottom: 1.5rem;
 }
 
 .search-bar {
   display: flex;
   gap: 0.75rem;
-  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
 }
 
 .search-bar input {
   flex: 1;
-  min-width: 240px;
-  padding: 0.75rem 1rem;
-  border: 1px solid var(--border-color);
-  border-radius: calc(var(--radius) - 2px);
+  padding: 0.85rem 1.1rem;
+  border: 2px solid var(--border-color);
+  border-radius: calc(var(--radius) - 4px);
   font-size: 1rem;
   outline: none;
   transition: border-color 0.2s ease;
@@ -79,14 +72,13 @@ body {
 
 .search-bar input:focus {
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
 .btn {
-  padding: 0.75rem 1.25rem;
+  padding: 0.85rem 1.5rem;
   border: none;
-  border-radius: calc(var(--radius) - 2px);
-  font-size: 0.95rem;
+  border-radius: calc(var(--radius) - 4px);
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.2s ease;
@@ -101,15 +93,6 @@ body {
   background-color: var(--primary-hover);
 }
 
-.btn-secondary {
-  background-color: var(--secondary);
-  color: white;
-}
-
-.btn-secondary:hover {
-  background-color: var(--secondary-hover);
-}
-
 .feedback-section {
   display: flex;
   justify-content: center;
@@ -117,8 +100,8 @@ body {
 }
 
 .spinner {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border: 4px solid var(--border-color);
   border-top-color: var(--primary);
   border-radius: 50%;
@@ -132,7 +115,7 @@ body {
 .status-message {
   width: 100%;
   padding: 1rem;
-  border-radius: calc(var(--radius) - 2px);
+  border-radius: calc(var(--radius) - 4px);
   font-weight: 500;
   text-align: center;
 }
@@ -143,47 +126,56 @@ body {
   border: 1px solid var(--error-border);
 }
 
-.status-message.info {
-  background-color: #eff6ff;
-  color: #1e40af;
-  border: 1px solid #bfdbfe;
-}
-
-.user-grid {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1.25rem;
-}
-
-.user-card {
-  background-color: var(--bg-main);
-  border: 1px solid var(--border-color);
-  border-radius: calc(var(--radius) - 2px);
-  padding: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.user-card:hover {
-  transform: translateY(-2px);
+.weather-card {
+  background: linear-gradient(135deg, #0284c7, #0369a1);
+  color: white;
+  border-radius: var(--radius);
+  padding: 2rem;
   box-shadow: var(--shadow);
 }
 
-.user-card h3 {
-  font-size: 1.1rem;
-  color: var(--text-main);
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 1rem;
 }
 
-.user-card p {
-  font-size: 0.875rem;
-  color: var(--text-muted);
+.card-header h2 {
+  font-size: 2rem;
 }
 
-.user-card strong {
-  color: var(--text-main);
+.badge {
+  background-color: rgba(255, 255, 255, 0.25);
+  padding: 0.35rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.main-temp {
+  font-size: 4rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1;
+}
+
+.main-temp .unit {
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+.weather-details p {
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
 }
 
 .hidden {
@@ -196,5 +188,5 @@ body {
   border-top: 1px solid var(--border-color);
   text-align: center;
   font-size: 0.85rem;
-  color: var(--text-muted);
+  color: #64748b;
 }
