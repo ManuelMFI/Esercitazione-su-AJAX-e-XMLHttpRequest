@@ -14,5 +14,5 @@ Applicazione web che utilizza l'oggetto nativo `XMLHttpRequest` per recuperare i
 2. Aprire la cartella in Visual Studio Code e avviare con Live Server (oppure con `python -m http.server` da terminale per evitare blocchi CORS).
 3. Inserire il nome di una città nella barra di ricerca e premere "Cerca".
 
-## Autore
+## Autori
 Manuel Manfredi e Luigi Romanzi
