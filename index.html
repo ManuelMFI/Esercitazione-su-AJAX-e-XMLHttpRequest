@@ -3,59 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard Meteo Reale - XHR</title>
+  <title>Dashboard Meteo - XHR</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="app-container">
-    <header class="app-header">
-      <h1>🌤️ Dashboard Meteo Reale</h1>
-      <p class="subtitle">Dati meteo live tramite l'API pubblica Open-Meteo e <code>XMLHttpRequest</code></p>
-    </header>
+  <div class="container">
+    <h1>Dashboard Meteo</h1>
+    <p class="sottotitolo">Ricerca meteo in tempo reale con XMLHttpRequest</p>
 
-    <main>
-      <section class="controls-section">
-        <form id="searchForm" class="search-bar">
-          <input 
-            type="text" 
-            id="cityInput" 
-            placeholder="Inserisci il nome di una città (es. Roma, Milano, Parigi)..." 
-            autocomplete="off"
-            required
-          >
-          <button type="submit" id="btnSearch" class="btn btn-primary">Cerca Meteo</button>
-        </form>
-      </section>
+    <div class="ricerca">
+      <input type="text" id="inputCitta" placeholder="Inserisci una città (es. Roma, Milano)...">
+      <button id="btnCerca">Cerca</button>
+    </div>
 
-      <section class="feedback-section">
-        <div id="spinner" class="spinner hidden" aria-hidden="true"></div>
-        <div id="statusMessage" class="status-message hidden" role="alert"></div>
-      </section>
+    <div id="loading" class="nascosto">Caricamento in corso...</div>
+    <div id="errore" class="box-errore nascosto"></div>
 
-      <section class="results-section">
-        <div id="weatherCard" class="weather-card hidden">
-          <div class="card-header">
-            <h2 id="cityName">--</h2>
-            <span id="countryBadge" class="badge">--</span>
-          </div>
-          <div class="card-body">
-            <div class="main-temp">
-              <span id="temperature">--</span><span class="unit">°C</span>
-            </div>
-            <div class="weather-details">
-              <p><strong>Condizioni:</strong> <span id="weatherCondition">--</span></p>
-              <p><strong>Vento:</strong> <span id="windSpeed">--</span> km/h</p>
-              <p><strong>Coordinate:</strong> <span id="coordinates">--</span></p>
-              <p><strong>Ultimo aggiornamento:</strong> <span id="lastUpdated">--</span></p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="app-footer">
-      <p>Progetto AJAX per Esercitazione — Fonte Dati: Open-Meteo.com API</p>
-    </footer>
+    <div id="schedaMeteo" class="scheda nascosto">
+      <div class="scheda-header">
+        <h2 id="nomeCitta"></h2>
+        <span id="paese"></span>
+      </div>
+      <div class="temperatura">
+        <span id="temp"></span> °C
+      </div>
+      <ul class="dettagli">
+        <li><strong>Condizioni:</strong> <span id="condizioni"></span></li>
+        <li><strong>Vento:</strong> <span id="vento"></span> km/h</li>
+        <li><strong>Coordinate:</strong> <span id="coordinate"></span></li>
+        <li><strong>Rilevamento:</strong> <span id="orario"></span></li>
+      </ul>
+    </div>
   </div>
 
   <script src="app.js"></script>
