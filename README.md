@@ -1,21 +1,18 @@
-# Mini Dashboard Utenti (XHR)
+# Mini Dashboard Meteo
 
-Applicazione web dinamica sviluppata con HTML5, CSS3 puro e JavaScript Vanilla per consumare un'API REST pubblica tramite **XMLHttpRequest (XHR)**.
+## Descrizione
+Applicazione web che utilizza l'oggetto nativo `XMLHttpRequest` per recuperare i dati meteorologici in tempo reale di una città inserita dall'utente tramite le API pubbliche di Open-Meteo.
 
-## 🚀 Funzionalità
-- Caricamento asincrono della lista utenti via chiamata HTTP `GET`
-- Ricerca e filtraggio degli utenti per nome tramite parametro query string (`?name_like=...`)
-- Gestione completa del ciclo di vita della richiesta AJAX (`onload`, `onerror`, `ontimeout`)
-- UI reattiva con indicatore di caricamento e messaggi di errore visuali
-- Protezione di base contro vulnerabilità XSS (HTML escape dei dati ricevuti)
+## Tecnologie utilizzate
+- HTML5
+- CSS3
+- JavaScript (XMLHttpRequest, JSON)
+- API Open-Meteo (Geocoding e Weather Forecast)
 
-## 🛠️ Tecnologie Utilizzate
-- **HTML5**: Struttura semantica
-- **CSS3**: Layout responsive con Flexbox e Grid (senza framework esterni)
-- **JavaScript ES6**: Gestione AJAX mediante l'API nativa `XMLHttpRequest`
-- **JSONPlaceholder API**: Endpoint server simulato per l'invio e la ricezione dati
+## Come avviare il progetto
+1. Clonare il repository da GitHub.
+2. Aprire la cartella in Visual Studio Code e avviare con Live Server (oppure con `python -m http.server` da terminale per evitare blocchi CORS).
+3. Inserire il nome di una città nella barra di ricerca e premere "Cerca".
 
-## ⚙️ Come Eseguire il Progetto in Locale
-1. Clonare il repository:
-   ```bash
-   git clone [https://github.com/TUO-USERNAME/progetto-xhr.git](https://github.com/TUO-USERNAME/progetto-xhr.git)
+## Autore
+Manuel Manfredi e Luigi Romanzi
